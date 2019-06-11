@@ -19,6 +19,9 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 @Suppress("unused")
 fun Application.module() {
+
+    val voices = listOf(SsmlVoiceGender.MALE, SsmlVoiceGender.FEMALE, SsmlVoiceGender.NEUTRAL)
+    val accents = listOf("en-US", "en-AU","en-GB")
     val client = HttpClient(Apache) {
         install(JsonFeature) {
             serializer = GsonSerializer()
@@ -46,13 +49,12 @@ fun Application.module() {
                  .build()
 
              val voice = VoiceSelectionParams.newBuilder()
-                 .setLanguageCode("en-US")
-                 .setSsmlGender(SsmlVoiceGender.MALE)
+                 .setLanguageCode(accents.random())
+                 .setSsmlGender(voices.random())
                  .build()
              val audioConfig = AudioConfig.newBuilder()
                  .setAudioEncoding(AudioEncoding.OGG_OPUS)
                  .build()
-
 
              call.respondBytes(ContentType.Audio.OGG, HttpStatusCode.OK, suspend {ttsClient.synthesizeSpeech(input,voice,audioConfig).audioContent.toByteArray()})
         }
