@@ -16,7 +16,7 @@ location of your service account credentials. The link in step 1 has more inform
 
 The application should be accessible at localhost:8080. Note - As of June 2019, the text to speech API provides a free tier that allows one to convert 4 million characters of text into audio monthly.
 
-### todo ###
+#### todo ####
 1. add third party license information 
 2. retrieve licenses from wikipedia articles being consumed and pass the license along to caller as meta-data.
 
