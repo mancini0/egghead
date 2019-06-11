@@ -13,6 +13,6 @@ location of your service account credentials. The link in step 1 has more inform
 
 #### deployment instructions ####
 1. `git clone https://github.com/mancini0/egghead.git`
-2.  cd egghead && ./gradlew run
+2.  `cd egghead && ./gradlew run`
 
 The application should be accessible at localhost:8080.
