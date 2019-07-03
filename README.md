@@ -1,7 +1,7 @@
 # egghead
 
 A simple Kotlin based [Ktor](https://ktor.io/quickstart/index.html) backend that hits Wikipedia's api for random articles, converts the article's summary to audio through Google Cloud's
-Text to Speech API and returns the audio to the caller, all in about 50 lines of code.
+Text to Speech API and returns the audio to the caller.
 
 
 #### prerequisites ####
